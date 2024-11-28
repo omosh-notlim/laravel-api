@@ -37,7 +37,7 @@ Route::get('setup', function() {
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
-            // code works even though there's an error
+            // code works even though it might highlight an error
             $adminToken = $user->createToken('admin-token', ['create', 'delete']);
             $updateToken = $user->createToken('update-token', ['create', 'update']);
             $basicToken = $user->createToken('basic-token', ['none']);
